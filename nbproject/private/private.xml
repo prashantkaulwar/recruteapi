@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/C:/xampp/htdocs/laravel/recruteapi/bootstrap/app.php</file>
+        <file>file:/C:/xampp/htdocs/laravel/recruteapi/routes/web.php</file>
+        <file>file:/C:/xampp/htdocs/laravel/recruteapi/database/migrations/2020_08_02_184349_create_candidate_table.php</file>
+        <file>file:/C:/xampp/htdocs/laravel/recruteapi/app/Http/Controllers/CandidateController.php</file>
+        <file>file:/C:/xampp/htdocs/laravel/recruteapi/app/Candidate.php</file>
+        <file>file:/C:/xampp/htdocs/laravel/recruteapi/app/Http/Middleware/Authenticate.php</file>
+        <file>file:/C:/xampp/htdocs/laravel/recruteapi/app/Providers/AuthServiceProvider.php</file>
+    </open-files>
+</project-private>

@@ -1,0 +1,521 @@
+[2020-08-02 18:53:05] local.ERROR: PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'crmapi.candidates' doesn't exist in C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php:458
+Stack trace:
+#0 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(458): PDO->prepare('insert into `ca...')
+#1 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(664): Illuminate\Database\Connection->Illuminate\Database\{closure}('insert into `ca...', Array)
+#2 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(631): Illuminate\Database\Connection->runQueryCallback('insert into `ca...', Array, Object(Closure))
+#3 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(465): Illuminate\Database\Connection->run('insert into `ca...', Array, Object(Closure))
+#4 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(417): Illuminate\Database\Connection->statement('insert into `ca...', Array)
+#5 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Processors\Processor.php(32): Illuminate\Database\Connection->insert('insert into `ca...', Array)
+#6 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2774): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `ca...', Array, 'id')
+#7 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Builder.php(1403): Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#8 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(900): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#9 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(865): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(728): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Builder.php(767): Illuminate\Database\Eloquent\Model->save()
+#12 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\support\helpers.php(433): Illuminate\Database\Eloquent\Builder->Illuminate\Database\Eloquent\{closure}(Object(App\Candidate))
+#13 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Builder.php(768): tap(Object(App\Candidate), Object(Closure))
+#14 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\support\Traits\ForwardsCalls.php(23): Illuminate\Database\Eloquent\Builder->create(Array)
+#15 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(1732): Illuminate\Database\Eloquent\Model->forwardCallTo(Object(Illuminate\Database\Eloquent\Builder), 'create', Array)
+#16 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(1744): Illuminate\Database\Eloquent\Model->__call('create', Array)
+#17 C:\xampp\htdocs\laravel\recruteapi\app\Http\Controllers\CandidateController.php(66): Illuminate\Database\Eloquent\Model::__callStatic('create', Array)
+#18 [internal function]: App\Http\Controllers\CandidateController->create(Object(Laravel\Lumen\Http\Request))
+#19 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(37): call_user_func_array(Array, Array)
+#20 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Util.php(37): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#21 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(95): Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+#22 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(39): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Array, Object(Closure))
+#23 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Container.php(596): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Array, Array, NULL)
+#24 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(386): Illuminate\Container\Container->call(Array, Array)
+#25 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(352): Laravel\Lumen\Application->callControllerCallable(Array, Array)
+#26 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(326): Laravel\Lumen\Application->callLumenController(Object(App\Http\Controllers\CandidateController), 'create', Array)
+#27 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(279): Laravel\Lumen\Application->callControllerAction(Array)
+#28 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(264): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#29 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(166): Laravel\Lumen\Application->handleFoundRoute(Array)
+#30 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(426): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#31 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(172): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#32 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(109): Laravel\Lumen\Application->dispatch(NULL)
+#33 C:\xampp\htdocs\laravel\recruteapi\public\index.php(28): Laravel\Lumen\Application->run()
+#34 {main}
+
+Next Illuminate\Database\QueryException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'crmapi.candidates' doesn't exist (SQL: insert into `candidates` (`first_name`, `last_name`, `email`, `contact_number`, `gender`, `specialization`, `work_ex_year`, `candidate_dob`, `address`, `resume`, `updated_at`, `created_at`) values (Govind, Kaulwar, gkkaulwar@gmail.com, 12345677892, 0, ?, ?, 0, , 2020/08/02Resume of Prashant Kaulwar.doc, 2020-08-02 18:53:05, 2020-08-02 18:53:05)) in C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php:671
+Stack trace:
+#0 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(631): Illuminate\Database\Connection->runQueryCallback('insert into `ca...', Array, Object(Closure))
+#1 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(465): Illuminate\Database\Connection->run('insert into `ca...', Array, Object(Closure))
+#2 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(417): Illuminate\Database\Connection->statement('insert into `ca...', Array)
+#3 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Processors\Processor.php(32): Illuminate\Database\Connection->insert('insert into `ca...', Array)
+#4 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2774): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `ca...', Array, 'id')
+#5 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Builder.php(1403): Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(900): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#7 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(865): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#8 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(728): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#9 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Builder.php(767): Illuminate\Database\Eloquent\Model->save()
+#10 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\support\helpers.php(433): Illuminate\Database\Eloquent\Builder->Illuminate\Database\Eloquent\{closure}(Object(App\Candidate))
+#11 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Builder.php(768): tap(Object(App\Candidate), Object(Closure))
+#12 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\support\Traits\ForwardsCalls.php(23): Illuminate\Database\Eloquent\Builder->create(Array)
+#13 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(1732): Illuminate\Database\Eloquent\Model->forwardCallTo(Object(Illuminate\Database\Eloquent\Builder), 'create', Array)
+#14 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(1744): Illuminate\Database\Eloquent\Model->__call('create', Array)
+#15 C:\xampp\htdocs\laravel\recruteapi\app\Http\Controllers\CandidateController.php(66): Illuminate\Database\Eloquent\Model::__callStatic('create', Array)
+#16 [internal function]: App\Http\Controllers\CandidateController->create(Object(Laravel\Lumen\Http\Request))
+#17 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(37): call_user_func_array(Array, Array)
+#18 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Util.php(37): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#19 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(95): Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+#20 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(39): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Array, Object(Closure))
+#21 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Container.php(596): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Array, Array, NULL)
+#22 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(386): Illuminate\Container\Container->call(Array, Array)
+#23 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(352): Laravel\Lumen\Application->callControllerCallable(Array, Array)
+#24 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(326): Laravel\Lumen\Application->callLumenController(Object(App\Http\Controllers\CandidateController), 'create', Array)
+#25 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(279): Laravel\Lumen\Application->callControllerAction(Array)
+#26 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(264): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#27 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(166): Laravel\Lumen\Application->handleFoundRoute(Array)
+#28 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(426): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#29 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(172): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#30 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(109): Laravel\Lumen\Application->dispatch(NULL)
+#31 C:\xampp\htdocs\laravel\recruteapi\public\index.php(28): Laravel\Lumen\Application->run()
+#32 {main} {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'crmapi.candidates' doesn't exist (SQL: insert into `candidates` (`first_name`, `last_name`, `email`, `contact_number`, `gender`, `specialization`, `work_ex_year`, `candidate_dob`, `address`, `resume`, `updated_at`, `created_at`) values (Govind, Kaulwar, gkkaulwar@gmail.com, 12345677892, 0, ?, ?, 0, , 2020/08/02Resume of Prashant Kaulwar.doc, 2020-08-02 18:53:05, 2020-08-02 18:53:05)) at C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php:671)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(631): Illuminate\\Database\\Connection->runQueryCallback('insert into `ca...', Array, Object(Closure))
+#1 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(465): Illuminate\\Database\\Connection->run('insert into `ca...', Array, Object(Closure))
+#2 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(417): Illuminate\\Database\\Connection->statement('insert into `ca...', Array)
+#3 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Processors\\Processor.php(32): Illuminate\\Database\\Connection->insert('insert into `ca...', Array)
+#4 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2774): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId(Object(Illuminate\\Database\\Query\\Builder), 'insert into `ca...', Array, 'id')
+#5 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Builder.php(1403): Illuminate\\Database\\Query\\Builder->insertGetId(Array, 'id')
+#6 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(900): Illuminate\\Database\\Eloquent\\Builder->__call('insertGetId', Array)
+#7 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(865): Illuminate\\Database\\Eloquent\\Model->insertAndSetId(Object(Illuminate\\Database\\Eloquent\\Builder), Array)
+#8 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(728): Illuminate\\Database\\Eloquent\\Model->performInsert(Object(Illuminate\\Database\\Eloquent\\Builder))
+#9 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Builder.php(767): Illuminate\\Database\\Eloquent\\Model->save()
+#10 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\support\\helpers.php(433): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}(Object(App\\Candidate))
+#11 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Builder.php(768): tap(Object(App\\Candidate), Object(Closure))
+#12 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\support\\Traits\\ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create(Array)
+#13 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(1732): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'create', Array)
+#14 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(1744): Illuminate\\Database\\Eloquent\\Model->__call('create', Array)
+#15 C:\\xampp\\htdocs\\laravel\ecruteapi\\app\\Http\\Controllers\\CandidateController.php(66): Illuminate\\Database\\Eloquent\\Model::__callStatic('create', Array)
+#16 [internal function]: App\\Http\\Controllers\\CandidateController->create(Object(Laravel\\Lumen\\Http\\Request))
+#17 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(37): call_user_func_array(Array, Array)
+#18 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#21 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#22 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(386): Illuminate\\Container\\Container->call(Array, Array)
+#23 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(352): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#24 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(326): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\CandidateController), 'create', Array)
+#25 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(279): Laravel\\Lumen\\Application->callControllerAction(Array)
+#26 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(264): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#27 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(166): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#28 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(426): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#29 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(172): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#30 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(109): Laravel\\Lumen\\Application->dispatch(NULL)
+#31 C:\\xampp\\htdocs\\laravel\ecruteapi\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#32 {main}
+
+[previous exception] [object] (PDOException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'crmapi.candidates' doesn't exist at C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php:458)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(458): PDO->prepare('insert into `ca...')
+#1 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(664): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('insert into `ca...', Array)
+#2 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(631): Illuminate\\Database\\Connection->runQueryCallback('insert into `ca...', Array, Object(Closure))
+#3 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(465): Illuminate\\Database\\Connection->run('insert into `ca...', Array, Object(Closure))
+#4 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(417): Illuminate\\Database\\Connection->statement('insert into `ca...', Array)
+#5 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Processors\\Processor.php(32): Illuminate\\Database\\Connection->insert('insert into `ca...', Array)
+#6 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2774): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId(Object(Illuminate\\Database\\Query\\Builder), 'insert into `ca...', Array, 'id')
+#7 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Builder.php(1403): Illuminate\\Database\\Query\\Builder->insertGetId(Array, 'id')
+#8 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(900): Illuminate\\Database\\Eloquent\\Builder->__call('insertGetId', Array)
+#9 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(865): Illuminate\\Database\\Eloquent\\Model->insertAndSetId(Object(Illuminate\\Database\\Eloquent\\Builder), Array)
+#10 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(728): Illuminate\\Database\\Eloquent\\Model->performInsert(Object(Illuminate\\Database\\Eloquent\\Builder))
+#11 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Builder.php(767): Illuminate\\Database\\Eloquent\\Model->save()
+#12 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\support\\helpers.php(433): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}(Object(App\\Candidate))
+#13 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Builder.php(768): tap(Object(App\\Candidate), Object(Closure))
+#14 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\support\\Traits\\ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create(Array)
+#15 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(1732): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'create', Array)
+#16 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(1744): Illuminate\\Database\\Eloquent\\Model->__call('create', Array)
+#17 C:\\xampp\\htdocs\\laravel\ecruteapi\\app\\Http\\Controllers\\CandidateController.php(66): Illuminate\\Database\\Eloquent\\Model::__callStatic('create', Array)
+#18 [internal function]: App\\Http\\Controllers\\CandidateController->create(Object(Laravel\\Lumen\\Http\\Request))
+#19 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(37): call_user_func_array(Array, Array)
+#20 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#21 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#22 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#23 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#24 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(386): Illuminate\\Container\\Container->call(Array, Array)
+#25 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(352): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#26 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(326): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\CandidateController), 'create', Array)
+#27 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(279): Laravel\\Lumen\\Application->callControllerAction(Array)
+#28 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(264): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#29 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(166): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#30 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(426): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#31 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(172): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#32 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(109): Laravel\\Lumen\\Application->dispatch(NULL)
+#33 C:\\xampp\\htdocs\\laravel\ecruteapi\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#34 {main}
+"} 
+[2020-08-02 18:54:46] local.ERROR: PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'crmapi.candidate' doesn't exist in C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php:331
+Stack trace:
+#0 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(331): PDO->prepare('select count(*)...')
+#1 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(664): Illuminate\Database\Connection->Illuminate\Database\{closure}('select count(*)...', Array)
+#2 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(631): Illuminate\Database\Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#3 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(339): Illuminate\Database\Connection->run('select count(*)...', Array, Object(Closure))
+#4 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2205): Illuminate\Database\Connection->select('select count(*)...', Array, false)
+#5 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2193): Illuminate\Database\Query\Builder->runSelect()
+#6 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2688): Illuminate\Database\Query\Builder->Illuminate\Database\Query\{closure}()
+#7 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2194): Illuminate\Database\Query\Builder->onceWithColumns(Array, Object(Closure))
+#8 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2615): Illuminate\Database\Query\Builder->get(Array)
+#9 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2543): Illuminate\Database\Query\Builder->aggregate('count', Array)
+#10 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\validation\DatabasePresenceVerifier.php(55): Illuminate\Database\Query\Builder->count()
+#11 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\validation\Concerns\ValidatesAttributes.php(763): Illuminate\Validation\DatabasePresenceVerifier->getCount('candidate', 'email', 'gkkaulwar@gmail...', NULL, NULL, Array)
+#12 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\validation\Validator.php(547): Illuminate\Validation\Validator->validateUnique('email', 'gkkaulwar@gmail...', Array, Object(Illuminate\Validation\Validator))
+#13 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\validation\Validator.php(370): Illuminate\Validation\Validator->validateAttribute('email', 'Unique')
+#14 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\validation\Validator.php(401): Illuminate\Validation\Validator->passes()
+#15 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Routing\ProvidesConvenienceMethods.php(67): Illuminate\Validation\Validator->fails()
+#16 C:\xampp\htdocs\laravel\recruteapi\app\Http\Controllers\CandidateController.php(27): Laravel\Lumen\Routing\Controller->validate(Object(Laravel\Lumen\Http\Request), Array)
+#17 [internal function]: App\Http\Controllers\CandidateController->create(Object(Laravel\Lumen\Http\Request))
+#18 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(37): call_user_func_array(Array, Array)
+#19 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Util.php(37): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#20 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(95): Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+#21 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(39): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Array, Object(Closure))
+#22 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Container.php(596): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Array, Array, NULL)
+#23 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(386): Illuminate\Container\Container->call(Array, Array)
+#24 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(352): Laravel\Lumen\Application->callControllerCallable(Array, Array)
+#25 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(326): Laravel\Lumen\Application->callLumenController(Object(App\Http\Controllers\CandidateController), 'create', Array)
+#26 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(279): Laravel\Lumen\Application->callControllerAction(Array)
+#27 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(264): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#28 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(166): Laravel\Lumen\Application->handleFoundRoute(Array)
+#29 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(426): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#30 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(172): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#31 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(109): Laravel\Lumen\Application->dispatch(NULL)
+#32 C:\xampp\htdocs\laravel\recruteapi\public\index.php(28): Laravel\Lumen\Application->run()
+#33 {main}
+
+Next Illuminate\Database\QueryException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'crmapi.candidate' doesn't exist (SQL: select count(*) as aggregate from `candidate` where `email` = gkkaulwar@gmail.com) in C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php:671
+Stack trace:
+#0 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(631): Illuminate\Database\Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#1 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(339): Illuminate\Database\Connection->run('select count(*)...', Array, Object(Closure))
+#2 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2205): Illuminate\Database\Connection->select('select count(*)...', Array, false)
+#3 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2193): Illuminate\Database\Query\Builder->runSelect()
+#4 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2688): Illuminate\Database\Query\Builder->Illuminate\Database\Query\{closure}()
+#5 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2194): Illuminate\Database\Query\Builder->onceWithColumns(Array, Object(Closure))
+#6 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2615): Illuminate\Database\Query\Builder->get(Array)
+#7 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2543): Illuminate\Database\Query\Builder->aggregate('count', Array)
+#8 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\validation\DatabasePresenceVerifier.php(55): Illuminate\Database\Query\Builder->count()
+#9 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\validation\Concerns\ValidatesAttributes.php(763): Illuminate\Validation\DatabasePresenceVerifier->getCount('candidate', 'email', 'gkkaulwar@gmail...', NULL, NULL, Array)
+#10 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\validation\Validator.php(547): Illuminate\Validation\Validator->validateUnique('email', 'gkkaulwar@gmail...', Array, Object(Illuminate\Validation\Validator))
+#11 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\validation\Validator.php(370): Illuminate\Validation\Validator->validateAttribute('email', 'Unique')
+#12 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\validation\Validator.php(401): Illuminate\Validation\Validator->passes()
+#13 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Routing\ProvidesConvenienceMethods.php(67): Illuminate\Validation\Validator->fails()
+#14 C:\xampp\htdocs\laravel\recruteapi\app\Http\Controllers\CandidateController.php(27): Laravel\Lumen\Routing\Controller->validate(Object(Laravel\Lumen\Http\Request), Array)
+#15 [internal function]: App\Http\Controllers\CandidateController->create(Object(Laravel\Lumen\Http\Request))
+#16 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(37): call_user_func_array(Array, Array)
+#17 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Util.php(37): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#18 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(95): Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+#19 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(39): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Array, Object(Closure))
+#20 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Container.php(596): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Array, Array, NULL)
+#21 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(386): Illuminate\Container\Container->call(Array, Array)
+#22 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(352): Laravel\Lumen\Application->callControllerCallable(Array, Array)
+#23 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(326): Laravel\Lumen\Application->callLumenController(Object(App\Http\Controllers\CandidateController), 'create', Array)
+#24 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(279): Laravel\Lumen\Application->callControllerAction(Array)
+#25 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(264): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#26 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(166): Laravel\Lumen\Application->handleFoundRoute(Array)
+#27 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(426): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#28 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(172): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#29 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(109): Laravel\Lumen\Application->dispatch(NULL)
+#30 C:\xampp\htdocs\laravel\recruteapi\public\index.php(28): Laravel\Lumen\Application->run()
+#31 {main} {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'crmapi.candidate' doesn't exist (SQL: select count(*) as aggregate from `candidate` where `email` = gkkaulwar@gmail.com) at C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php:671)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(631): Illuminate\\Database\\Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#1 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(339): Illuminate\\Database\\Connection->run('select count(*)...', Array, Object(Closure))
+#2 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2205): Illuminate\\Database\\Connection->select('select count(*)...', Array, false)
+#3 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2193): Illuminate\\Database\\Query\\Builder->runSelect()
+#4 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2688): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#5 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2194): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#6 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2615): Illuminate\\Database\\Query\\Builder->get(Array)
+#7 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2543): Illuminate\\Database\\Query\\Builder->aggregate('count', Array)
+#8 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\validation\\DatabasePresenceVerifier.php(55): Illuminate\\Database\\Query\\Builder->count()
+#9 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\validation\\Concerns\\ValidatesAttributes.php(763): Illuminate\\Validation\\DatabasePresenceVerifier->getCount('candidate', 'email', 'gkkaulwar@gmail...', NULL, NULL, Array)
+#10 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\validation\\Validator.php(547): Illuminate\\Validation\\Validator->validateUnique('email', 'gkkaulwar@gmail...', Array, Object(Illuminate\\Validation\\Validator))
+#11 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\validation\\Validator.php(370): Illuminate\\Validation\\Validator->validateAttribute('email', 'Unique')
+#12 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\validation\\Validator.php(401): Illuminate\\Validation\\Validator->passes()
+#13 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Routing\\ProvidesConvenienceMethods.php(67): Illuminate\\Validation\\Validator->fails()
+#14 C:\\xampp\\htdocs\\laravel\ecruteapi\\app\\Http\\Controllers\\CandidateController.php(27): Laravel\\Lumen\\Routing\\Controller->validate(Object(Laravel\\Lumen\\Http\\Request), Array)
+#15 [internal function]: App\\Http\\Controllers\\CandidateController->create(Object(Laravel\\Lumen\\Http\\Request))
+#16 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(37): call_user_func_array(Array, Array)
+#17 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#19 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#20 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#21 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(386): Illuminate\\Container\\Container->call(Array, Array)
+#22 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(352): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#23 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(326): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\CandidateController), 'create', Array)
+#24 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(279): Laravel\\Lumen\\Application->callControllerAction(Array)
+#25 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(264): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#26 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(166): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#27 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(426): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#28 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(172): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#29 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(109): Laravel\\Lumen\\Application->dispatch(NULL)
+#30 C:\\xampp\\htdocs\\laravel\ecruteapi\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#31 {main}
+
+[previous exception] [object] (PDOException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'crmapi.candidate' doesn't exist at C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php:331)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(331): PDO->prepare('select count(*)...')
+#1 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(664): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('select count(*)...', Array)
+#2 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(631): Illuminate\\Database\\Connection->runQueryCallback('select count(*)...', Array, Object(Closure))
+#3 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(339): Illuminate\\Database\\Connection->run('select count(*)...', Array, Object(Closure))
+#4 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2205): Illuminate\\Database\\Connection->select('select count(*)...', Array, false)
+#5 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2193): Illuminate\\Database\\Query\\Builder->runSelect()
+#6 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2688): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#7 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2194): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#8 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2615): Illuminate\\Database\\Query\\Builder->get(Array)
+#9 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2543): Illuminate\\Database\\Query\\Builder->aggregate('count', Array)
+#10 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\validation\\DatabasePresenceVerifier.php(55): Illuminate\\Database\\Query\\Builder->count()
+#11 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\validation\\Concerns\\ValidatesAttributes.php(763): Illuminate\\Validation\\DatabasePresenceVerifier->getCount('candidate', 'email', 'gkkaulwar@gmail...', NULL, NULL, Array)
+#12 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\validation\\Validator.php(547): Illuminate\\Validation\\Validator->validateUnique('email', 'gkkaulwar@gmail...', Array, Object(Illuminate\\Validation\\Validator))
+#13 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\validation\\Validator.php(370): Illuminate\\Validation\\Validator->validateAttribute('email', 'Unique')
+#14 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\validation\\Validator.php(401): Illuminate\\Validation\\Validator->passes()
+#15 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Routing\\ProvidesConvenienceMethods.php(67): Illuminate\\Validation\\Validator->fails()
+#16 C:\\xampp\\htdocs\\laravel\ecruteapi\\app\\Http\\Controllers\\CandidateController.php(27): Laravel\\Lumen\\Routing\\Controller->validate(Object(Laravel\\Lumen\\Http\\Request), Array)
+#17 [internal function]: App\\Http\\Controllers\\CandidateController->create(Object(Laravel\\Lumen\\Http\\Request))
+#18 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(37): call_user_func_array(Array, Array)
+#19 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#20 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#21 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#22 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#23 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(386): Illuminate\\Container\\Container->call(Array, Array)
+#24 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(352): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#25 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(326): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\CandidateController), 'create', Array)
+#26 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(279): Laravel\\Lumen\\Application->callControllerAction(Array)
+#27 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(264): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#28 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(166): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#29 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(426): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#30 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(172): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#31 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(109): Laravel\\Lumen\\Application->dispatch(NULL)
+#32 C:\\xampp\\htdocs\\laravel\ecruteapi\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#33 {main}
+"} 
+[2020-08-02 18:59:02] local.ERROR: PDOException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'specialization' cannot be null in C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php:464
+Stack trace:
+#0 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(464): PDOStatement->execute()
+#1 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(664): Illuminate\Database\Connection->Illuminate\Database\{closure}('insert into `ca...', Array)
+#2 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(631): Illuminate\Database\Connection->runQueryCallback('insert into `ca...', Array, Object(Closure))
+#3 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(465): Illuminate\Database\Connection->run('insert into `ca...', Array, Object(Closure))
+#4 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(417): Illuminate\Database\Connection->statement('insert into `ca...', Array)
+#5 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Processors\Processor.php(32): Illuminate\Database\Connection->insert('insert into `ca...', Array)
+#6 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2774): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `ca...', Array, 'id')
+#7 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Builder.php(1403): Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#8 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(900): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#9 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(865): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#10 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(728): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#11 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Builder.php(767): Illuminate\Database\Eloquent\Model->save()
+#12 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\support\helpers.php(433): Illuminate\Database\Eloquent\Builder->Illuminate\Database\Eloquent\{closure}(Object(App\Candidate))
+#13 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Builder.php(768): tap(Object(App\Candidate), Object(Closure))
+#14 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\support\Traits\ForwardsCalls.php(23): Illuminate\Database\Eloquent\Builder->create(Array)
+#15 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(1732): Illuminate\Database\Eloquent\Model->forwardCallTo(Object(Illuminate\Database\Eloquent\Builder), 'create', Array)
+#16 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(1744): Illuminate\Database\Eloquent\Model->__call('create', Array)
+#17 C:\xampp\htdocs\laravel\recruteapi\app\Http\Controllers\CandidateController.php(66): Illuminate\Database\Eloquent\Model::__callStatic('create', Array)
+#18 [internal function]: App\Http\Controllers\CandidateController->create(Object(Laravel\Lumen\Http\Request))
+#19 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(37): call_user_func_array(Array, Array)
+#20 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Util.php(37): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#21 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(95): Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+#22 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(39): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Array, Object(Closure))
+#23 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Container.php(596): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Array, Array, NULL)
+#24 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(386): Illuminate\Container\Container->call(Array, Array)
+#25 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(352): Laravel\Lumen\Application->callControllerCallable(Array, Array)
+#26 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(326): Laravel\Lumen\Application->callLumenController(Object(App\Http\Controllers\CandidateController), 'create', Array)
+#27 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(279): Laravel\Lumen\Application->callControllerAction(Array)
+#28 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(264): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#29 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(166): Laravel\Lumen\Application->handleFoundRoute(Array)
+#30 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(426): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#31 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(172): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#32 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(109): Laravel\Lumen\Application->dispatch(NULL)
+#33 C:\xampp\htdocs\laravel\recruteapi\public\index.php(28): Laravel\Lumen\Application->run()
+#34 {main}
+
+Next Illuminate\Database\QueryException: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'specialization' cannot be null (SQL: insert into `candidate` (`first_name`, `last_name`, `email`, `contact_number`, `gender`, `specialization`, `work_ex_year`, `candidate_dob`, `address`, `resume`, `updated_at`, `created_at`) values (Govind, Kaulwar, gkkaulwar@gmail.com, 12345677892, 0, ?, ?, 0, , 2020/08/02Resume of Prashant Kaulwar.doc, 2020-08-02 18:59:01, 2020-08-02 18:59:01)) in C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php:671
+Stack trace:
+#0 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(631): Illuminate\Database\Connection->runQueryCallback('insert into `ca...', Array, Object(Closure))
+#1 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(465): Illuminate\Database\Connection->run('insert into `ca...', Array, Object(Closure))
+#2 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Connection.php(417): Illuminate\Database\Connection->statement('insert into `ca...', Array)
+#3 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Processors\Processor.php(32): Illuminate\Database\Connection->insert('insert into `ca...', Array)
+#4 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Query\Builder.php(2774): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `ca...', Array, 'id')
+#5 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Builder.php(1403): Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(900): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#7 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(865): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#8 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(728): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#9 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Builder.php(767): Illuminate\Database\Eloquent\Model->save()
+#10 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\support\helpers.php(433): Illuminate\Database\Eloquent\Builder->Illuminate\Database\Eloquent\{closure}(Object(App\Candidate))
+#11 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Builder.php(768): tap(Object(App\Candidate), Object(Closure))
+#12 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\support\Traits\ForwardsCalls.php(23): Illuminate\Database\Eloquent\Builder->create(Array)
+#13 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(1732): Illuminate\Database\Eloquent\Model->forwardCallTo(Object(Illuminate\Database\Eloquent\Builder), 'create', Array)
+#14 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\database\Eloquent\Model.php(1744): Illuminate\Database\Eloquent\Model->__call('create', Array)
+#15 C:\xampp\htdocs\laravel\recruteapi\app\Http\Controllers\CandidateController.php(66): Illuminate\Database\Eloquent\Model::__callStatic('create', Array)
+#16 [internal function]: App\Http\Controllers\CandidateController->create(Object(Laravel\Lumen\Http\Request))
+#17 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(37): call_user_func_array(Array, Array)
+#18 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Util.php(37): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#19 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(95): Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+#20 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(39): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Array, Object(Closure))
+#21 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Container.php(596): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Array, Array, NULL)
+#22 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(386): Illuminate\Container\Container->call(Array, Array)
+#23 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(352): Laravel\Lumen\Application->callControllerCallable(Array, Array)
+#24 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(326): Laravel\Lumen\Application->callLumenController(Object(App\Http\Controllers\CandidateController), 'create', Array)
+#25 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(279): Laravel\Lumen\Application->callControllerAction(Array)
+#26 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(264): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#27 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(166): Laravel\Lumen\Application->handleFoundRoute(Array)
+#28 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(426): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#29 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(172): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#30 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(109): Laravel\Lumen\Application->dispatch(NULL)
+#31 C:\xampp\htdocs\laravel\recruteapi\public\index.php(28): Laravel\Lumen\Application->run()
+#32 {main} {"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'specialization' cannot be null (SQL: insert into `candidate` (`first_name`, `last_name`, `email`, `contact_number`, `gender`, `specialization`, `work_ex_year`, `candidate_dob`, `address`, `resume`, `updated_at`, `created_at`) values (Govind, Kaulwar, gkkaulwar@gmail.com, 12345677892, 0, ?, ?, 0, , 2020/08/02Resume of Prashant Kaulwar.doc, 2020-08-02 18:59:01, 2020-08-02 18:59:01)) at C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php:671)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(631): Illuminate\\Database\\Connection->runQueryCallback('insert into `ca...', Array, Object(Closure))
+#1 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(465): Illuminate\\Database\\Connection->run('insert into `ca...', Array, Object(Closure))
+#2 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(417): Illuminate\\Database\\Connection->statement('insert into `ca...', Array)
+#3 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Processors\\Processor.php(32): Illuminate\\Database\\Connection->insert('insert into `ca...', Array)
+#4 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2774): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId(Object(Illuminate\\Database\\Query\\Builder), 'insert into `ca...', Array, 'id')
+#5 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Builder.php(1403): Illuminate\\Database\\Query\\Builder->insertGetId(Array, 'id')
+#6 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(900): Illuminate\\Database\\Eloquent\\Builder->__call('insertGetId', Array)
+#7 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(865): Illuminate\\Database\\Eloquent\\Model->insertAndSetId(Object(Illuminate\\Database\\Eloquent\\Builder), Array)
+#8 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(728): Illuminate\\Database\\Eloquent\\Model->performInsert(Object(Illuminate\\Database\\Eloquent\\Builder))
+#9 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Builder.php(767): Illuminate\\Database\\Eloquent\\Model->save()
+#10 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\support\\helpers.php(433): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}(Object(App\\Candidate))
+#11 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Builder.php(768): tap(Object(App\\Candidate), Object(Closure))
+#12 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\support\\Traits\\ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create(Array)
+#13 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(1732): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'create', Array)
+#14 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(1744): Illuminate\\Database\\Eloquent\\Model->__call('create', Array)
+#15 C:\\xampp\\htdocs\\laravel\ecruteapi\\app\\Http\\Controllers\\CandidateController.php(66): Illuminate\\Database\\Eloquent\\Model::__callStatic('create', Array)
+#16 [internal function]: App\\Http\\Controllers\\CandidateController->create(Object(Laravel\\Lumen\\Http\\Request))
+#17 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(37): call_user_func_array(Array, Array)
+#18 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#19 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#20 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#21 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#22 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(386): Illuminate\\Container\\Container->call(Array, Array)
+#23 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(352): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#24 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(326): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\CandidateController), 'create', Array)
+#25 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(279): Laravel\\Lumen\\Application->callControllerAction(Array)
+#26 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(264): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#27 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(166): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#28 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(426): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#29 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(172): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#30 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(109): Laravel\\Lumen\\Application->dispatch(NULL)
+#31 C:\\xampp\\htdocs\\laravel\ecruteapi\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#32 {main}
+
+[previous exception] [object] (PDOException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'specialization' cannot be null at C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php:464)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(464): PDOStatement->execute()
+#1 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(664): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}('insert into `ca...', Array)
+#2 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(631): Illuminate\\Database\\Connection->runQueryCallback('insert into `ca...', Array, Object(Closure))
+#3 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(465): Illuminate\\Database\\Connection->run('insert into `ca...', Array, Object(Closure))
+#4 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Connection.php(417): Illuminate\\Database\\Connection->statement('insert into `ca...', Array)
+#5 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Processors\\Processor.php(32): Illuminate\\Database\\Connection->insert('insert into `ca...', Array)
+#6 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Query\\Builder.php(2774): Illuminate\\Database\\Query\\Processors\\Processor->processInsertGetId(Object(Illuminate\\Database\\Query\\Builder), 'insert into `ca...', Array, 'id')
+#7 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Builder.php(1403): Illuminate\\Database\\Query\\Builder->insertGetId(Array, 'id')
+#8 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(900): Illuminate\\Database\\Eloquent\\Builder->__call('insertGetId', Array)
+#9 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(865): Illuminate\\Database\\Eloquent\\Model->insertAndSetId(Object(Illuminate\\Database\\Eloquent\\Builder), Array)
+#10 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(728): Illuminate\\Database\\Eloquent\\Model->performInsert(Object(Illuminate\\Database\\Eloquent\\Builder))
+#11 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Builder.php(767): Illuminate\\Database\\Eloquent\\Model->save()
+#12 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\support\\helpers.php(433): Illuminate\\Database\\Eloquent\\Builder->Illuminate\\Database\\Eloquent\\{closure}(Object(App\\Candidate))
+#13 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Builder.php(768): tap(Object(App\\Candidate), Object(Closure))
+#14 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\support\\Traits\\ForwardsCalls.php(23): Illuminate\\Database\\Eloquent\\Builder->create(Array)
+#15 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(1732): Illuminate\\Database\\Eloquent\\Model->forwardCallTo(Object(Illuminate\\Database\\Eloquent\\Builder), 'create', Array)
+#16 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\database\\Eloquent\\Model.php(1744): Illuminate\\Database\\Eloquent\\Model->__call('create', Array)
+#17 C:\\xampp\\htdocs\\laravel\ecruteapi\\app\\Http\\Controllers\\CandidateController.php(66): Illuminate\\Database\\Eloquent\\Model::__callStatic('create', Array)
+#18 [internal function]: App\\Http\\Controllers\\CandidateController->create(Object(Laravel\\Lumen\\Http\\Request))
+#19 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(37): call_user_func_array(Array, Array)
+#20 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#21 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#22 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#23 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#24 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(386): Illuminate\\Container\\Container->call(Array, Array)
+#25 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(352): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#26 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(326): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\CandidateController), 'create', Array)
+#27 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(279): Laravel\\Lumen\\Application->callControllerAction(Array)
+#28 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(264): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#29 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(166): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#30 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(426): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#31 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(172): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#32 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(109): Laravel\\Lumen\\Application->dispatch(NULL)
+#33 C:\\xampp\\htdocs\\laravel\ecruteapi\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#34 {main}
+"} 
+[2020-08-02 19:03:15] local.ERROR: BadMethodCallException: Method Illuminate\Validation\Validator::validateStrings does not exist. in C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\validation\Validator.php:1378
+Stack trace:
+#0 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\validation\Validator.php(547): Illuminate\Validation\Validator->__call('validateStrings', Array)
+#1 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\validation\Validator.php(370): Illuminate\Validation\Validator->validateAttribute('gender', 'Strings')
+#2 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\validation\Validator.php(401): Illuminate\Validation\Validator->passes()
+#3 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Routing\ProvidesConvenienceMethods.php(67): Illuminate\Validation\Validator->fails()
+#4 C:\xampp\htdocs\laravel\recruteapi\app\Http\Controllers\CandidateController.php(27): Laravel\Lumen\Routing\Controller->validate(Object(Laravel\Lumen\Http\Request), Array)
+#5 [internal function]: App\Http\Controllers\CandidateController->create(Object(Laravel\Lumen\Http\Request))
+#6 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(37): call_user_func_array(Array, Array)
+#7 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Util.php(37): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#8 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(95): Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+#9 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(39): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Array, Object(Closure))
+#10 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Container.php(596): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Array, Array, NULL)
+#11 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(386): Illuminate\Container\Container->call(Array, Array)
+#12 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(352): Laravel\Lumen\Application->callControllerCallable(Array, Array)
+#13 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(326): Laravel\Lumen\Application->callLumenController(Object(App\Http\Controllers\CandidateController), 'create', Array)
+#14 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(279): Laravel\Lumen\Application->callControllerAction(Array)
+#15 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(264): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#16 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(166): Laravel\Lumen\Application->handleFoundRoute(Array)
+#17 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(426): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#18 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(172): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#19 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(109): Laravel\Lumen\Application->dispatch(NULL)
+#20 C:\xampp\htdocs\laravel\recruteapi\public\index.php(28): Laravel\Lumen\Application->run()
+#21 {main} {"exception":"[object] (BadMethodCallException(code: 0): Method Illuminate\\Validation\\Validator::validateStrings does not exist. at C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\validation\\Validator.php:1378)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\validation\\Validator.php(547): Illuminate\\Validation\\Validator->__call('validateStrings', Array)
+#1 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\validation\\Validator.php(370): Illuminate\\Validation\\Validator->validateAttribute('gender', 'Strings')
+#2 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\validation\\Validator.php(401): Illuminate\\Validation\\Validator->passes()
+#3 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Routing\\ProvidesConvenienceMethods.php(67): Illuminate\\Validation\\Validator->fails()
+#4 C:\\xampp\\htdocs\\laravel\ecruteapi\\app\\Http\\Controllers\\CandidateController.php(27): Laravel\\Lumen\\Routing\\Controller->validate(Object(Laravel\\Lumen\\Http\\Request), Array)
+#5 [internal function]: App\\Http\\Controllers\\CandidateController->create(Object(Laravel\\Lumen\\Http\\Request))
+#6 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(37): call_user_func_array(Array, Array)
+#7 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#8 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#9 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#10 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#11 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(386): Illuminate\\Container\\Container->call(Array, Array)
+#12 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(352): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#13 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(326): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\CandidateController), 'create', Array)
+#14 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(279): Laravel\\Lumen\\Application->callControllerAction(Array)
+#15 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(264): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#16 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(166): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#17 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(426): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#18 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(172): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#19 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(109): Laravel\\Lumen\\Application->dispatch(NULL)
+#20 C:\\xampp\\htdocs\\laravel\ecruteapi\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#21 {main}
+"} 
+[2020-08-02 19:05:18] local.ERROR: Error: Call to undefined function App\Http\Controllers\now() in C:\xampp\htdocs\laravel\recruteapi\app\Http\Controllers\CandidateController.php:40
+Stack trace:
+#0 [internal function]: App\Http\Controllers\CandidateController->create(Object(Laravel\Lumen\Http\Request))
+#1 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(37): call_user_func_array(Array, Array)
+#2 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Util.php(37): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#3 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(95): Illuminate\Container\Util::unwrapIfClosure(Object(Closure))
+#4 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\BoundMethod.php(39): Illuminate\Container\BoundMethod::callBoundMethod(Object(Laravel\Lumen\Application), Array, Object(Closure))
+#5 C:\xampp\htdocs\laravel\recruteapi\vendor\illuminate\container\Container.php(596): Illuminate\Container\BoundMethod::call(Object(Laravel\Lumen\Application), Array, Array, NULL)
+#6 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(386): Illuminate\Container\Container->call(Array, Array)
+#7 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(352): Laravel\Lumen\Application->callControllerCallable(Array, Array)
+#8 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(326): Laravel\Lumen\Application->callLumenController(Object(App\Http\Controllers\CandidateController), 'create', Array)
+#9 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(279): Laravel\Lumen\Application->callControllerAction(Array)
+#10 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(264): Laravel\Lumen\Application->callActionOnArrayBasedRoute(Array)
+#11 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(166): Laravel\Lumen\Application->handleFoundRoute(Array)
+#12 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(426): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(Object(Laravel\Lumen\Http\Request))
+#13 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(172): Laravel\Lumen\Application->sendThroughPipeline(Array, Object(Closure))
+#14 C:\xampp\htdocs\laravel\recruteapi\vendor\laravel\lumen-framework\src\Concerns\RoutesRequests.php(109): Laravel\Lumen\Application->dispatch(NULL)
+#15 C:\xampp\htdocs\laravel\recruteapi\public\index.php(28): Laravel\Lumen\Application->run()
+#16 {main} {"exception":"[object] (Error(code: 0): Call to undefined function App\\Http\\Controllers\
+ow() at C:\\xampp\\htdocs\\laravel\ecruteapi\\app\\Http\\Controllers\\CandidateController.php:40)
+[stacktrace]
+#0 [internal function]: App\\Http\\Controllers\\CandidateController->create(Object(Laravel\\Lumen\\Http\\Request))
+#1 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(37): call_user_func_array(Array, Array)
+#2 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Util.php(37): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#3 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#4 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\BoundMethod.php(39): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Array, Object(Closure))
+#5 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\illuminate\\container\\Container.php(596): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Array, Array, NULL)
+#6 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(386): Illuminate\\Container\\Container->call(Array, Array)
+#7 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(352): Laravel\\Lumen\\Application->callControllerCallable(Array, Array)
+#8 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(326): Laravel\\Lumen\\Application->callLumenController(Object(App\\Http\\Controllers\\CandidateController), 'create', Array)
+#9 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(279): Laravel\\Lumen\\Application->callControllerAction(Array)
+#10 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(264): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#11 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(166): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#12 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(426): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#13 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(172): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#14 C:\\xampp\\htdocs\\laravel\ecruteapi\\vendor\\laravel\\lumen-framework\\src\\Concerns\\RoutesRequests.php(109): Laravel\\Lumen\\Application->dispatch(NULL)
+#15 C:\\xampp\\htdocs\\laravel\ecruteapi\\public\\index.php(28): Laravel\\Lumen\\Application->run()
+#16 {main}
+"} 
